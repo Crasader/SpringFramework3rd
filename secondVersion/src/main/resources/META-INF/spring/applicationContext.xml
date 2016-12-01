@@ -10,5 +10,13 @@
         <property name="fixedDepositDao" ref="dao"></property>
     </bean>
 
-    <bean id="dao" class="com.springframework3rd.dao.FixedDepositHibernateDao"/>
+    <!--<bean id="dao" class="com.springframework3rd.dao.FixedDepositHibernateDao"/>-->
+    <!--<bean id="dao" class="com.springframework3rd.dao.FixedDepositDaoFactory"-->
+          <!--factory-method="getFixedDepositDao">-->
+        <!--<constructor-arg index="0" value="hibernate"/>-->
+    <!--</bean>-->
+    <bean id="daoFactory" class="com.springframework3rd.dao.FixedDepositDaoFactory2"></bean>
+    <bean id="dao" factory-bean="daoFactory" factory-method="getFixedDepositDao">
+        <constructor-arg index="0" value="jdbc" />
+    </bean>
 </beans>
