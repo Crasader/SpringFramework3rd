@@ -19,4 +19,5 @@
     <bean id="dao" factory-bean="daoFactory" factory-method="getFixedDepositDao">
         <constructor-arg index="0" value="jdbc" />
     </bean>
+    <bean id="fixedDepositDetails" class="com.springframework3rd.domain.FixedDepositDetails" scope="prototype"/>
 </beans>
