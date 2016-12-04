@@ -1,11 +1,12 @@
 package com.springframework3rd.service;
 
+import com.springframework3rd.base.ServiceTemplate;
 import com.springframework3rd.dao.FixedDepositHibernateDao;
 import com.springframework3rd.dao.IFixedDepositDao;
 import com.springframework3rd.domain.FixedDepositDetails;
 import org.apache.log4j.Logger;
 
-public class FixedDepositServiceImpl implements IFixedDepositService{
+public class FixedDepositServiceImpl extends ServiceTemplate implements IFixedDepositService{
     private static Logger logger = Logger.getLogger(FixedDepositServiceImpl.class);
     private IFixedDepositDao fixedDepositDao;
 
