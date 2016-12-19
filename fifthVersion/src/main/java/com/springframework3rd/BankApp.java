@@ -16,5 +16,9 @@ public class BankApp {
 
         FixedDepositService service = (FixedDepositService)context.getBean("fixedDepositService");
         service.run();
+
+        context.getBean("eventSenderFactory");
+        context.getBean("eventSenderFactory");
+        context.close();
     }
 }

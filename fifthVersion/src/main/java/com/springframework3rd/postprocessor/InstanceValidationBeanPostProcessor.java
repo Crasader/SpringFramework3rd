@@ -17,14 +17,14 @@ public class InstanceValidationBeanPostProcessor implements BeanPostProcessor, O
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName)
             throws BeansException {
-        logger.info("postProcessBeforeInitialization method invoked");
+        logger.info("postProcessBeforeInitialization method of InstanceValidationBeanPostProcessor invoked");
         return bean;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName)
             throws BeansException {
-        logger.info("postProcessAfterInitialization method invoked");
+        logger.info("postProcessAfterInitialization method of InstanceValidationBeanPostProcessor invoked");
         if(bean instanceof IInstanceValidator) {
             ((IInstanceValidator) bean).validateInstance();
         }
