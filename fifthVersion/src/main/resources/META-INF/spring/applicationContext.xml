@@ -5,7 +5,10 @@
     <bean id="fixedDepositService" class="com.springframework3rd.service.FixedDepositService">
         <property name="fixedDepositDao" ref="fixedDepositDao"></property>
     </bean>
-    <bean id="fixedDepositDao" class="com.springframework3rd.dao.FixedDepositDao"></bean>
+    <bean id="fixedDepositDao" class="com.springframework3rd.dao.FixedDepositDao">
+        <property name="fixedDepositDetails" ref="fixedDepositDetails"/>
+    </bean>
+    <bean id="fixedDepositDetails" class="com.springframework3rd.domain.FixedDepositDetails" scope="prototype" />
     <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
     <bean class="com.springframework3rd.postprocessor.InstanceValidationBeanPostProcessor">
         <property name="order" value="1"/>
@@ -15,4 +18,25 @@
         <property name="order" value="0"/>
     </bean>
     <bean id="myApplicationContext" class="com.springframework3rd.common.MyApplicationContext"/>
+    <bean id="eventSenderFactory" class="com.springframework3rd.factory.EventSenderFactoryBean"/>
+    <bean class="com.springframework3rd.postprocessor.ApplicationConfigurer"/>
+    <bean id="dataSource" class="com.springframework3rd.domain.DataSource">
+        <property name="url" value="${database.url}"/>
+        <property name="username" value="${database.username}"/>
+        <property name="password" value="${database.password}"/>
+        <property name="driverClass" value="${database.driverClass}"/>
+    </bean>
+    <bean id="webServiceConfiguration" class="com.springframework3rd.domain.WebServiceConfiguration">
+        <property name="webServiceUrl" value="${webservice.url}"/>
+    </bean>
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:database.properties</value>
+                <value>classpath:webservice.properties</value>
+            </list>
+
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="false"/>
+    </bean>
 </beans>

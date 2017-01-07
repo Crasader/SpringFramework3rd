@@ -1,6 +1,8 @@
 package com.springframework3rd;
 
 import com.springframework3rd.dao.FixedDepositDao;
+import com.springframework3rd.domain.DataSource;
+import com.springframework3rd.domain.WebServiceConfiguration;
 import com.springframework3rd.service.FixedDepositService;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
@@ -17,8 +19,10 @@ public class BankApp {
         FixedDepositService service = (FixedDepositService)context.getBean("fixedDepositService");
         service.run();
 
-        context.getBean("eventSenderFactory");
-        context.getBean("eventSenderFactory");
+//        context.getBean("eventSenderFactory");
+//        context.getBean("eventSenderFactory");
+        logger.info(context.getBean(DataSource.class));
+        logger.info(context.getBean(WebServiceConfiguration.class));
         context.close();
     }
 }
