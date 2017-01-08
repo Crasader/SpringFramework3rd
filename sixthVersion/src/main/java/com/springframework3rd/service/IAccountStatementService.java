@@ -1,4 +1,4 @@
 package com.springframework3rd.service;
 
-public interface IAccountStatementService {
+public interface IAccountStatementService extends IMyService {
 }

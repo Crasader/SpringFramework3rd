@@ -3,9 +3,11 @@ package com.springframework3rd.dao;
 import com.springframework3rd.common.IInstanceValidator;
 import com.springframework3rd.domain.IFixedDepositDetails;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 
+@Repository(value="myFixedDepositDao")
 public class FixedDepositDao implements IFixedDepositDao, IInstanceValidator {
     private static Logger logger = Logger.getLogger(FixedDepositDao.class);
     private DatabaseConnection connection;
