@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class BankAccountService implements IBankAccountService {
     @Autowired
     private BankAccountDao bankAccountDao;
+
     public int createBankAccount(BankAccountDetails bankAccountDetails) {
         return bankAccountDao.createBankAccount(bankAccountDetails);
     }
