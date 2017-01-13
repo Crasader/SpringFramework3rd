@@ -16,7 +16,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-@Repository(value = "fixedDepositDao")
+//@Repository(value = "fixedDepositDao")
 public class FixedDepositDao implements IFixedDepositDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;

@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Repository("bankAccountDao")
+//@Repository("bankAccountDao")
 public class BankAccountDao implements IBankAccountDao {
     private SimpleJdbcInsert insertBankAccountDetail;
 
@@ -28,12 +28,13 @@ public class BankAccountDao implements IBankAccountDao {
 
     @Override
     public int createBankAccount(final BankAccountDetails bankAccountDetails) {
-        Map<String, Object> parameters = new HashMap<>(2);
-        parameters.put("balance_amount", bankAccountDetails.getBalanceAmount());
-        parameters.put("last_transaction_ts",
-                new Date(bankAccountDetails.getLastTransactionTimestamp().getTime()));
-        Number key = insertBankAccountDetail.executeAndReturnKey(parameters);
-        return key.intValue();
+//        Map<String, Object> parameters = new HashMap<>(2);
+//        parameters.put("balance_amount", bankAccountDetails.getBalanceAmount());
+//        parameters.put("last_transaction_ts",
+//                new Date(bankAccountDetails.getLastTransactionTimestamp().getTime()));
+//        Number key = insertBankAccountDetail.executeAndReturnKey(parameters);
+//        return key.intValue();
+        return 777;
     }
 
     public void subtractFromAccount(int bankAccountId, int amount) {

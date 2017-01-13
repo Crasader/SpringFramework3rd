@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service("fixedDepositService")
+//@Service("fixedDepositService")
 public class FixedDepositService implements IFixedDepositService {
     @Autowired
     @Qualifier("fixedDepositDao")

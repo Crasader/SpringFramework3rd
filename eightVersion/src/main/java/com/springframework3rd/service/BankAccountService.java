@@ -5,7 +5,7 @@ import com.springframework3rd.domain.BankAccountDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("bankAccountService")
+//@Service("bankAccountService")
 public class BankAccountService implements IBankAccountService {
     @Autowired
     private BankAccountDao bankAccountDao;
