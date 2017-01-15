@@ -16,8 +16,8 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 public interface FixedDepositRepository extends
-        Repository<FixedDepositDetails, Integer>/*,
-        QueryDslPredicateExecutor<FixedDepositDetails>,
+        Repository<FixedDepositDetails, Integer>,
+        QueryDslPredicateExecutor<FixedDepositDetails>/*,
         QueryByExampleExecutor<FixedDepositDetails>*/ {
 
     FixedDepositDetails save(FixedDepositDetails entity);

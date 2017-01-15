@@ -5,13 +5,11 @@ import com.springframework3rd.domain.BankAccountDetails;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class BankAccountRepositoryImpl /*implements BankAccountRepositoryCustom*/ {
+public class BankAccountRepositoryImpl implements BankAccountRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    public BankAccountRepositoryImpl() {}
-/*
     @Override
     public void subtractFromAccount(int bankAccountId, int amount) {
         BankAccountDetails bankAccountDetails = entityManager.find(BankAccountDetails.class, bankAccountId);
@@ -21,5 +19,4 @@ public class BankAccountRepositoryImpl /*implements BankAccountRepositoryCustom*
         bankAccountDetails.setBalanceAmount(bankAccountDetails.getBalanceAmount()-amount);
         entityManager.merge(bankAccountDetails);
     }
-    */
 }

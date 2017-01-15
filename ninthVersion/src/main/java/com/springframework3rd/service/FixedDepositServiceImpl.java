@@ -27,12 +27,12 @@ public class FixedDepositServiceImpl implements FixedDepositService {
     @Autowired
     private BankAccountRepository bankAccountRepository;
 
-//    @Override
-//    @Transactional
-//    public int createFixedDeposit(FixedDepositDetails fdd) throws Exception {
-//        bankAccountRepository.subtractFromAccount(fdd.getBankAccountId().getAccountId(), fdd.getFdAmount());
-//        return fixedDepositRepository.save(fdd).getFixedDepositId();
-//    }
+    @Override
+    @Transactional
+    public int createFixedDeposit(FixedDepositDetails fdd) throws Exception {
+        bankAccountRepository.subtractFromAccount(fdd.getBankAccountId().getAccountId(), fdd.getFdAmount());
+        return fixedDepositRepository.save(fdd).getFixedDepositId();
+    }
 
     @Override
     @Transactional

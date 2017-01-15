@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.Stream;
 
 public interface FixedDepositService {
-//    int createFixedDeposit(FixedDepositDetails fdd) throws Exception;
+    int createFixedDeposit(FixedDepositDetails fdd) throws Exception;
     FixedDepositDetails getFixedDeposit(int fixedDepositId);
     long count();
     long countByTenure(int tenure);
