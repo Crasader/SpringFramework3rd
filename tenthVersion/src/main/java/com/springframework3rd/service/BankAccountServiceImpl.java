@@ -1,20 +1,19 @@
 package com.springframework3rd.service;
 
+import com.springframework3rd.dao.BankAccountDao;
 import com.springframework3rd.domain.BankAccountDetails;
-import com.springframework3rd.repository.BankAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Service(value = "bankAccountService")
 public class BankAccountServiceImpl implements BankAccountService {
 
     @Autowired
-    private BankAccountRepository bankAccountRepository;
+    private BankAccountDao bankAccountDao;
 
     @Override
-    @Transactional
     public int createBankAccount(BankAccountDetails bankAccountDetails) {
-        return bankAccountRepository.save(bankAccountDetails).getAccountId();
+        return bankAccountDao.createBankAccount(bankAccountDetails);
     }
+
 }

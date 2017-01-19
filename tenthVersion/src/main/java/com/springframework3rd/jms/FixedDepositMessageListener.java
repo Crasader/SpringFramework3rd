@@ -17,7 +17,7 @@ public class FixedDepositMessageListener implements MessageListener {
     private static Logger logger = Logger.getLogger(FixedDepositMessageListener.class);
 
     @Autowired
-    @Qualifier(value = "fixedDepositDao")
+    @Qualifier(value = "myFixedDepositDao")
     private FixedDepositDao fixedDepositDao;
 
     @Autowired

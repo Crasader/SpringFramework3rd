@@ -27,7 +27,7 @@ public class FixedDepositServiceImpl implements FixedDepositService {
     private JmsTemplate jmsTemplate;
 
     @Autowired
-    @Qualifier(value = "fixedDepositDao")
+    @Qualifier(value = "myFixedDepositDao")
     private FixedDepositDao myFixedDepositDao;
 
 
